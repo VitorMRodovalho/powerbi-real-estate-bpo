@@ -1,0 +1,11 @@
+| TableName   | Name                       | Expression                                                                                                  |   DisplayFolder |   Description |
+|:------------|:---------------------------|:------------------------------------------------------------------------------------------------------------|----------------:|--------------:|
+| _Medidas    | contagem programas totais  | CALCULATE(DISTINCTCOUNT(uau_seg_prg[Cod_prg]), REMOVEFILTERS())                                             |             nan |           nan |
+| _Medidas    | contagem programa sensivel | CALCULATE(COUNTROWS(tbProgramas), FILTER(ALL(tbProgramas),tbProgramas[Programa Sensível]="sim"))            |             nan |           nan |
+|             |                            | --CALCULATE ( COUNTX(tbProgramas, tbProgramas[Programa Sensível]="sim"), REMOVEFILTERS())                   |                 |               |
+| _Medidas    | ProgUser                   | SUM(uau_seg_usr_prg[Atrib_User])                                                                            |             nan |           nan |
+| _Medidas    | ProgGrupo                  | CALCULATE(sum(uau_seg_grup_prg[Atrib_GrupoUser]), ALL(uau_seg_grup_prg[Atrib_GrupoUser]))                   |             nan |           nan |
+| _Medidas    | Contagem Programa NULL     | [contagem programas totais] - COUNT(uau_seg_grup_prg[Atrib_GrupoUser])                                      |             nan |           nan |
+| _Medidas    | TotalCap                   | CALCULATE(cou(uau_seg_caps[StatusCap]), REMOVEFILTERS())                                                    |             nan |           nan |
+| _Medidas    | Dif SI                     | SUM(uau_seguranca_historico_altplan[ValorSiAtual_hsi])-sum(uau_seguranca_historico_altplan[ValorSiAnt_hsi]) |             nan |           nan |
+| _Medidas    | Subtotal SPE               | sum(uau_suprimentos_contaspagarpagas_fornecedor[TotalLiq_Des])                                              |             nan |           nan |

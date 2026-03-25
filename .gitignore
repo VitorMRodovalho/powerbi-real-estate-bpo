@@ -1,0 +1,32 @@
+# Power BI files (contain data and credentials)
+*.pbix
+*.pbit
+
+# Raw data files
+*.csv
+*.xlsx
+*.xls
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# OS files
+.DS_Store
+Thumbs.db
+thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary
+*.tmp
+*.bak
+*.swp
+*~
+
+# Sanitization script (contains sensitive patterns)
+sanitize.sh
